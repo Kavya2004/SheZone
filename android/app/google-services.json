@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1033789870463",
+    "project_id": "shezone-fb89b",
+    "storage_bucket": "shezone-fb89b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033789870463:android:e693a34cc2407f03ff8a4a",
+        "android_client_info": {
+          "package_name": "com.example.she_zone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYRLLKqTZBt4OWfGFOhpsrFrlL2H7QvX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
