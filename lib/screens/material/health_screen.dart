@@ -5,57 +5,69 @@ class HealthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Safety & Self-Defense")),
+      appBar: AppBar(title: Text("Health & Wellness")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             _buildSection(
               context,
-              'Basic Self-Defense Moves',
-              'Simple techniques to protect yourself in dangerous situations.',
+              'Nutrition & Healthy Eating',
+              'Meal planning tips, healthy recipes, and essential nutrients for women.',
               {
-                'Basic Self-Defense Moves (Women\'s Health)':
-                'https://www.womenshealthmag.com/fitness/a19995744/basic-self-defense-moves/',
-                'Self-Defense Tips (Verywell Fit)':
-                'https://www.verywellfit.com/self-defense-basics-for-beginners-3498126',
+                'Healthy Eating Plate by Harvard T.H. Chan School of Public Health':
+                'https://www.hsph.harvard.edu/nutritionsource/healthy-eating-plate/',
+                'MyFitnessPal: Meal planning and tracking':
+                'https://www.myfitnesspal.com/',
+                'Simple healthy recipes from BBC Good Food':
+                'https://www.bbcgoodfood.com/recipes/collection/healthy-recipes',
+                'Essential nutrients every woman needs':
+                'https://www.webmd.com/diet/features/essential-nutrients-women',
               },
             ),
             _buildSection(
               context,
-              'Online Safety & Digital Security',
-              'Tips on protecting personal information, avoiding scams, and preventing cyberstalking.',
+              'Exercise & Fitness',
+              'Simple home workouts, yoga, and strength training routines.',
               {
-                'Protecting Personal Info (Federal Trade Commission)':
-                'https://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure',
-                'Avoiding Online Scams (FBI)':
-                'https://www.fbi.gov/scams-and-safety/common-scams-and-crimes/internet-fraud',
-                'Cyberstalking Awareness (Cyber Civil Rights Initiative)':
-                'https://www.cybercivilrights.org/',
+                'Nike Training Club: Free workouts for all fitness levels':
+                'https://www.nike.com/ntc-app',
+                'Yoga With Adriene (YouTube channel)':
+                'https://www.youtube.com/user/yogawithadriene',
+                'Strength training guide for women from SELF':
+                'https://www.self.com/story/strength-training-guide',
+                '7-Minute Workout by the American College of Sports Medicine':
+                'https://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/',
               },
             ),
             _buildSection(
               context,
-              'Travel Safety Tips',
-              'How to stay safe when traveling alone or in unfamiliar places.',
+              'Reproductive Health & Family Planning',
+              'Understanding menstrual health, contraception options, and fertility tips.',
               {
-                'Travel Safety Tips (Travel.State.Gov)':
-                'https://travel.state.gov/content/travel/en/international-travel/before-you-go/travelers-checklist.html',
-                'Staying Safe While Traveling (CDC)':
-                'https://wwwnc.cdc.gov/travel/page/travelers-checklist',
+                'Menstrual health guide from Planned Parenthood':
+                'https://www.plannedparenthood.org/learn/health-and-wellness/menstruation',
+                'Birth control options explained':
+                'https://www.plannedparenthood.org/learn/birth-control',
+                'Understanding fertility and ovulation':
+                'https://www.healthline.com/health/how-to-track-ovulation',
+                'PCOS and reproductive health resources':
+                'https://www.pcosaa.org/pcos-awareness/',
               },
             ),
             _buildSection(
               context,
-              'Emergency Contacts & Resources',
-              'Important hotlines and organizations to turn to for help in crisis situations.',
+              'Managing Chronic Conditions',
+              'Coping strategies for conditions like PCOS, endometriosis, and autoimmune diseases.',
               {
-                'National Domestic Violence Hotline':
-                'https://www.thehotline.org/',
-                'RAINN (Rape, Abuse & Incest National Network)':
-                'https://www.rainn.org/',
-                'Crisis Text Line':
-                'https://www.crisistextline.org/',
+                'Living with PCOS: Tips from the Mayo Clinic':
+                'https://www.mayoclinic.org/diseases-conditions/pcos/symptoms-causes/syc-20353439',
+                'Endometriosis: Support and treatment options':
+                'https://www.endofound.org/',
+                'Managing autoimmune diseases (Cleveland Clinic)':
+                'https://my.clevelandclinic.org/health/diseases/22372-autoimmune-disease',
+                'Chronic condition self-management tips':
+                'https://www.cdc.gov/chronicdisease/resources/publications/factsheets/self-management.htm',
               },
             ),
           ],
@@ -105,9 +117,9 @@ class HealthScreen extends StatelessWidget {
                         Expanded(
                           child: InkWell(
                             onTap: () async {
-                              final url = Uri.parse(entry.value);  // Convert string to Uri
-                              if (await canLaunchUrl(url)) {  // Use canLaunchUrl
-                                await launchUrl(url);  // Use launchUrl
+                              final url = entry.value;
+                              if (await canLaunch(url)) {
+                                await launch(url);
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(content: Text("Unable to open link")),
