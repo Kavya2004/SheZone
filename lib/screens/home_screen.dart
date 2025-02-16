@@ -233,7 +233,7 @@ class _ExpandableStoryCardState extends State<ExpandableStoryCard> {
                       onTap: toggleUpvote,
                       child: Icon(
                         Icons.favorite_rounded,
-                        color: isUpvoted ? Colors.red[900] : Colors.white,
+                        color: isUpvoted ? Colors.red[300] : Colors.white,
                       ),
                     ),
                   ],
